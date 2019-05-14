@@ -1,0 +1,40 @@
+<div class="container game-page">
+
+  <div id="wordTofind" class="d-flex justify-content-center">
+    <div *ngFor="let c of wordTofind" class="characterDisplay">
+      <div [hidden]="!c.isEnabled">{{c.value}}</div>
+    </div>
+  </div>
+
+  <h3>
+    Nombre d'essaies restantes: {{nbrCases}}
+  </h3>
+  <div class="auto-margin">
+    <app-keyboard (newCharacter)="onNewCharacter($event)"></app-keyboard>
+  </div>
+</div>
+
+<ng-template #modalFelicitation >
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+  </div>
+  <div class="modal-body">
+    Felicitation, vous avez gagner ! 
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-success pull-right" (click)="newGame();modalRef.hide()">Rejouer</button>
+    </div>
+</ng-template>
+
+
+<ng-template #modalLost>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Modal</h4>
+    </div>
+    <div class="modal-body">
+      Vous avez perdu ! 
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success pull-right" (click)="newGame();modalRef.hide()">Rejouer</button>
+    </div>
+  </ng-template>

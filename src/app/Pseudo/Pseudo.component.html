@@ -1,0 +1,11 @@
+<form #pseudoForm="ngForm" (ngSubmit)="onSubmit()">
+    <h1 for="pseudo">Saisissez votre pseudo</h1>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="pseudo" required name="pseudo" 
+              id="pseudo" class="form-control" placeholder="pseudo" #psudoCtrl="ngModel" />
+      <div [hidden]="psudoCtrl.valid || psudoCtrl.pristine" class="alert alert-danger">
+        Merci de saisir votre psudo !
+      </div>
+    </div>
+  <button type="submit" class="btn btn-success" [disabled]="!pseudoForm.form.valid">Submit</button>
+</form>

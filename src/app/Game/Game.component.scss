@@ -1,0 +1,26 @@
+
+.game-page{
+    margin: 50px auto;
+}
+.characterDisplay{
+    border: 1px solid #000;
+    width: 70px;
+    height: 50px;
+    display: block;
+}
+.characterDisplay div{
+    font-size: 30px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+h3{
+    width: 100;
+    text-align: center;
+    padding: 15px;
+}
+.auto-margin{
+    margin: auto;
+    display: block;
+}

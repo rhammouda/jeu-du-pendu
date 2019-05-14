@@ -1,0 +1,5 @@
+<div class="d-flex justify-content-center" id="keyborad-container">
+  <div *ngFor="let c of characters"> 
+    <button class="btn-char" [disabled]="!c.isEnabled" (click)="onCharacterClick(c)">{{c.value}}</button> 
+  </div>
+</div>
